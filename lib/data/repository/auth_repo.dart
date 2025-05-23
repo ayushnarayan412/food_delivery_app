@@ -10,6 +10,6 @@ class AuthRepo {
   AuthRepo({required this.apiClient, required this.sharedPreferences});
 
   registration(SignUpBody signUpBody) {
-    apiClient.postData(AppConstants.REGISTRATION_URI, );
+    apiClient.postData(AppConstants.REGISTRATION_URI,signUpBody.toJson() );
   }
 }
