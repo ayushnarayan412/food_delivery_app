@@ -29,15 +29,15 @@ class AppColumn extends StatelessWidget {
                         color: AppColors.mainColor,
                       )),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SmallText(text: "4.5"),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SmallText(text: "1287"),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SmallText(text: "comments")

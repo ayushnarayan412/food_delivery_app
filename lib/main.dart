@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
         return GetBuilder<RecommendedProductController>(builder: (_) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            // home: (),
+            //home: (),
             initialRoute: RouteHelper.getSplashScreen(),
             getPages: RouteHelper.routes,
           );

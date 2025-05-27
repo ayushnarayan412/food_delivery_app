@@ -16,12 +16,12 @@ class _HomePageState extends State<HomePage> {
   // late PersistentTabController _controller;
 
   List pages = [
-    MainFoodPage(),
+    const MainFoodPage(),
     Container(
-      child: Center(child: Text("Next page")),
+      child: const Center(child: Text("Next page")),
     ),
-    CartHistory(),
-    AccountPage(),
+    const CartHistory(),
+    const AccountPage(),
   ];
   void onTapNav(int index) {
     setState(() {

@@ -27,8 +27,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
         children: [
           //Showing the header
           Container(
-            margin: EdgeInsets.only(top: 45, bottom: 15),
-            padding: EdgeInsets.only(left: 20, right: 20),
+            margin: const EdgeInsets.only(top: 45, bottom: 15),
+            padding: const EdgeInsets.only(left: 20, right: 20),
             child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,13 +57,13 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     child: Container(
                       width: 45,
                       height: 45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: AppColors.mainColor),
                       child: Icon(
                         Icons.search,
                         color: Colors.white,
                       ),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: AppColors.mainColor),
                     ),
                   )
                 ],
@@ -71,7 +71,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
             ),
           ),
           //Showing the body
-          Expanded(
+          const Expanded(
               child: SingleChildScrollView(
             child: FoodPageBody(),
           )),

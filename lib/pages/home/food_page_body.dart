@@ -23,8 +23,8 @@ class FoodPageBody extends StatefulWidget {
 class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
-  double _scaleFactor = 0.8;
-  double _height = Dimensions.pageViewContainer;
+  final double _scaleFactor = 0.8;
+  final double _height = Dimensions.pageViewContainer;
   @override
   void initState() {
     super.initState();
@@ -48,7 +48,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         //slider section
         GetBuilder<PopularProductController>(builder: (controller) {
           return controller.isLoaded
-              ? Container(
+              ? SizedBox(
                   height: Dimensions.pageView,                    
                     child: PageView.builder(
                         controller: pageController,
@@ -115,7 +115,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           return controller.isLoaded
               ? ListView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: controller.recommendedProductList.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
@@ -248,10 +248,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             },
           child: Container(
               height: Dimensions.pageViewContainer,
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.radius30),
-                  color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
+                  color: index.isEven ? const Color(0xFF69c5df) : const Color(0xFF9294cc),
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(AppConstants.BASE_URL +
@@ -262,11 +262,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           alignment: Alignment.bottomCenter,
           child: Container(
             height: Dimensions.pageViewTextContainer,
-            margin: EdgeInsets.only(left: 24, right: 24, bottom: 30),
+            margin: const EdgeInsets.only(left: 24, right: 24, bottom: 30),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(color: Color(0xFFe8e8e8), offset: Offset(0, 5)),
                   BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
                   BoxShadow(color: Colors.white, offset: Offset(5, 0))

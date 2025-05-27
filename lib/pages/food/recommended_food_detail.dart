@@ -14,7 +14,7 @@ import 'package:get/get.dart';
 class RecommendedFoodDetail extends StatelessWidget {
   final int pageId;
   final String page;
-  RecommendedFoodDetail({super.key, required this.pageId, required this.page});
+  const RecommendedFoodDetail({super.key, required this.pageId, required this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -83,20 +83,20 @@ class RecommendedFoodDetail extends StatelessWidget {
                 ],
               ),
               bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(20),
+                  preferredSize: const Size.fromHeight(20),
                   child: Container(
-                    child: Center(
-                        child: BigText(
-                      size: Dimensions.font26,
-                      text: product.name!,
-                    )),
                     width: double.maxFinite,
-                    padding: EdgeInsets.only(top: 5, bottom: 10),
+                    padding: const EdgeInsets.only(top: 5, bottom: 10),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(Dimensions.radius20),
                             topRight: Radius.circular(Dimensions.radius20))),
+                    child: Center(
+                        child: BigText(
+                      size: Dimensions.font26,
+                      text: product.name!,
+                    )),
                   )),
               pinned: true,
               backgroundColor: AppColors.yellowColor,
@@ -112,11 +112,11 @@ class RecommendedFoodDetail extends StatelessWidget {
                 child: Column(
               children: [
                 Container(
+                  margin: EdgeInsets.only(
+                      left: Dimensions.widht20, right: Dimensions.widht20),
                   child: ExpnadableTextWidget(
                     text: product.description!,
                   ),
-                  margin: EdgeInsets.only(
-                      left: Dimensions.widht20, right: Dimensions.widht20),
                 )
               ],
             ))
@@ -148,9 +148,7 @@ class RecommendedFoodDetail extends StatelessWidget {
                         ),
                       ),
                       BigText(
-                        text: '\$ ${product.price!} ' +
-                            ' X ' +
-                            ' ${controller.inCartItems} ',
+                        text: '\$ ${product.price!}  X  ${controller.inCartItems} ',
                         color: AppColors.mainBlackColor,
                         size: Dimensions.font26,
                       ),
@@ -206,12 +204,12 @@ class RecommendedFoodDetail extends StatelessWidget {
                               bottom: Dimensions.height20,
                               right: Dimensions.widht20,
                               left: Dimensions.widht20),
-                          child: BigText(
-                              text: "\$ ${product.price!} | Add to Cart"),
                           decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.circular(Dimensions.radius20),
                               color: AppColors.mainColor),
+                          child: BigText(
+                              text: "\$ ${product.price!} | Add to Cart"),
                         ),
                       ),
                     ],

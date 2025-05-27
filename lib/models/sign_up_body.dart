@@ -13,7 +13,9 @@ class SignUpBody {
     final Map<String, dynamic> data = Map<String, dynamic>();
     data["f_name"] = this.name;
     data["phone"] = this.phone;
-    
+    data['email'] = this.email;
+    data['password'] = this.password;
+
     return data;
   }
 }
