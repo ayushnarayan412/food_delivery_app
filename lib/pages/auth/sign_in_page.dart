@@ -18,12 +18,16 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
-    void login(AuthController authController) {
+    var phoneController = TextEditingController();
+    void _login(AuthController authController) {
       String email = emailController.text.trim();
       String password = passwordController.text.trim();
+      String phone = phoneController.text.trim();
       if (email.isEmpty) {
         showCustomSnackBar("Type in your email", title: "Email");
-      } else if (!GetUtils.isEmail(email)) {
+      } else if (phone.isEmpty) {
+        showCustomSnackBar("Type in your phone number", title: "Phone number");
+      }else if (!GetUtils.isEmail(email)) {
         showCustomSnackBar("Type in a valid email",
             title: "Valid email address");
       } else if (password.isEmpty) {
@@ -32,7 +36,7 @@ class SignInPage extends StatelessWidget {
         showCustomSnackBar("Password cannot be less than six characters",
             title: "Password");
       } else {
-        authController.login(email, password).then((status) {
+        authController.login(email,phone, password).then((status) {
           if (status.isSuccess) {
             Get.toNamed(RouteHelper.getInitial());
           } else {
@@ -98,6 +102,13 @@ class SignInPage extends StatelessWidget {
                           height: Dimensions.height20,
                         ),
                         AppTextField(
+                            textEditingController: phoneController,
+                            hintText: "Phone",
+                            icon: Icons.phone),
+                        SizedBox(
+                          height: Dimensions.height20,
+                        ),
+                        AppTextField(
                             isObscure: true,
                             textEditingController: passwordController,
                             hintText: "Password",
@@ -127,7 +138,7 @@ class SignInPage extends StatelessWidget {
                         SizedBox(height: Dimensions.screenHeight * 0.05),
                         GestureDetector(
                           onTap: () {
-                            login(authController);
+                            _login(authController);
                           },
                           child: Container(
                             width: Dimensions.screenWidth / 2,

@@ -17,9 +17,9 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     const MainFoodPage(),
-    Container(
-      child: const Center(child: Text("Next page")),
-    ),
+    // Container(
+    //   child: const Center(child: Text("Next page")),
+    // ),
     const CartHistory(),
     const AccountPage(),
   ];
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.archive), label: "History"),
+          // BottomNavigationBarItem(icon: Icon(Icons.archive), label: "History"),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart), label: "Cart"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),

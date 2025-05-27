@@ -71,10 +71,15 @@ class CartHistory extends StatelessWidget {
                   text: "Your Cart History",
                   color: Colors.white,
                 ),
-                AppIcon(
-                  icon: Icons.shopping_cart_outlined,
-                  iconColor: AppColors.mainColor,
-                  backgroundColor: AppColors.yellowColor,
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(RouteHelper.getCartPge());
+                  },
+                  child: const AppIcon(
+                    icon: Icons.shopping_cart_outlined,
+                    iconColor: AppColors.mainColor,
+                    backgroundColor: AppColors.yellowColor,
+                  ),
                 )
               ],
             ),
